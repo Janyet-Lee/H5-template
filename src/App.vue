@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
@@ -12,15 +11,7 @@ export default {
 </script>
 
 <style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  /* margin-top: 60px; */
-
-  html,
+html,
   body {
     height: 100%;
     width: 100%;
@@ -37,6 +28,7 @@ export default {
     font-size: 12px;
     // background: @t-background;
     // 优化字体渲染
+    margin: 0px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -98,10 +90,16 @@ export default {
     margin: 0;
     -webkit-appearance: none;
   }
-
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  /* margin-top: 60px; */
   // layout
-  #app {
-    height: 100%;
-  }
+  // #app {
+  //   height: 100%;
+  // }
 }
 </style>
