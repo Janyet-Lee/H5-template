@@ -38,6 +38,13 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+  /*
+   * 使用了 externals ，要在外部引入相对应的 js
+   */
+  externals: {
+    'vue': 'Vue',
+    'mint-ui': 'mint-ui'
+  },
   module: {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),

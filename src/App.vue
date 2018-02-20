@@ -7,13 +7,13 @@
 
 <script>
 export default {
-  name: "App"
+  name: 'App'
 };
 </script>
 
 <style lang="less">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -25,8 +25,8 @@ export default {
     height: 100%;
     width: 100%;
     font-size: 16px;
-    font-family: PingFangSC-Regular, "Helvetica Neue", Helvetica, "PingFang SC",
-      "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    font-family: PingFangSC-Regular, 'Helvetica Neue', Helvetica, 'PingFang SC',
+      'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
     // 去除iOS点击DOM元素出现的半透明色块
     -webkit-tap-highlight-color: transparent;
     // 触摸顺滑
@@ -90,11 +90,11 @@ export default {
   }
 
   /*取消部分浏览器`input[type='number']`的默认样式*/
-  input[type="number"] {
+  input[type='number'] {
     -moz-appearance: textfield;
   }
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
     margin: 0;
     -webkit-appearance: none;
   }
