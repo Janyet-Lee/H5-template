@@ -42,8 +42,8 @@ module.exports = {
    * 使用了 externals ，要在外部引入相对应的 js
    */
   externals: {
-    'vue': 'Vue',
-    'mint-ui': 'mint-ui'
+    'vue': 'Vue'
+    // 'mint-ui': 'mint-ui'
   },
   module: {
     rules: [

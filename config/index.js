@@ -11,13 +11,22 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+      '/ActivityDogYear': {
+        target: config.dev.target,
+        changeOrigin: true
+      },
       '/User': {
+        target: config.dev.target,
+        changeOrigin: true
+      },
+      '/Payment': {
         target: config.dev.target,
         changeOrigin: true
       }
     },
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
+    host: '0.0.0.0', // can be overwritten by process.env.HOST
+    disableHostCheck: false,
     port: config.dev.port, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
@@ -54,7 +63,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: config.publicPath + '/',
 
     /**
      * Source Maps
