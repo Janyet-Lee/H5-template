@@ -11,15 +11,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/ActivityDogYear': {
-        target: config.dev.target,
-        changeOrigin: true
-      },
-      '/User': {
-        target: config.dev.target,
-        changeOrigin: true
-      },
-      '/Payment': {
+      '/api': {
         target: config.dev.target,
         changeOrigin: true
       }

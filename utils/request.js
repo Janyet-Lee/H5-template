@@ -34,7 +34,7 @@ function checkStatus(response) {
   // 如果 http 状态码正常, 则直接返回数据
   if (response.status === 200 || response.status === 304) {
     // 这里, 如果不需要除 data 外的其他数据, 可以直接 return response.data, 这样可以让后面的代码精简一些
-    if (response.data.status.errCode === 1) {
+    if (response.data.status.errCode === 200) {
       return {
         code: response.data.status.errCode,
         data: response.data.data
@@ -54,7 +54,7 @@ function checkStatus(response) {
 
 // 处理来自后端的错误
 function checkCode(res, type) {
-  if (type !== "noProcssing") {
+  if (type !== "noProcessing") {
     // 需要处理
     if (res.code !== 1) {
       // 默认 toast 显示错误信息

@@ -125,6 +125,7 @@
 
 <script>
 import tool from '../../utils/tools';
+import homeApi from '../api/home.js';
 import { Toast } from 'mint-ui';
 import canvasModel from '../assets/home/canvas-model.png';
 require('../../utils/bridge');
@@ -241,15 +242,10 @@ export default {
     }
   },
   async created() {
-    this.getTimes();
-    const { code } = await this.$request.post(
-      '/ActivityDogYear/isLogin',
-      null,
-      'noProcssing'
-    );
-    if (code === 1) {
+    const { code, data } = await homeApi.checkLogin();
+    console.log(11111, code, data);
+    if (code === 200) {
       this.ifLogin = true;
-      // this.getTimes();
     }
     if (code === 0) {
       if (window.$LeeBridge.checkWebview()) {

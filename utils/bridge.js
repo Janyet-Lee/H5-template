@@ -1,3 +1,4 @@
+// 与APP交互的桥接库
 (function (obj) {
   function Lee() {
     this.author = 'Lee';

@@ -2,8 +2,7 @@ import Vuex from 'vuex';
 
 const basic = new Vuex.Store({
   state: {
-    money: '',
-    productId: ''
+    money: ''
   },
   getters: {
 
@@ -14,9 +13,6 @@ const basic = new Vuex.Store({
   mutations: {
     increment(state, payload) {
       state.money = payload;
-    },
-    setProductId(state, payload) {
-      state.productId = payload;
     }
   }
 });
