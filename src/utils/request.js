@@ -1,18 +1,21 @@
-import axios from "axios";
-import qs from "qs";
-import NProgress from "nprogress";
+import axios from 'axios';
+import qs from 'qs';
+import NProgress from 'nprogress';
 // import router from '@/router';
 // import store from '@/store/index'
-import { Toast, MessageBox } from "mint-ui";
-import config2 from "../private.config";
+import {
+  Toast,
+  MessageBox
+} from 'mint-ui';
+import config2 from '../../private.config';
 
 // API 服务器地址
 const publicPath = config2.apiPath;
 
 // axios 默认配置
 axios.defaults.timeout = 60000;
-axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
-axios.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded; charset=UTF-8";
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 
 // 请求时的拦截器
 axios.interceptors.request.use(config => {
@@ -34,7 +37,7 @@ function checkStatus(response) {
   // 如果 http 状态码正常, 则直接返回数据
   if (response.status === 200 || response.status === 304) {
     // 这里, 如果不需要除 data 外的其他数据, 可以直接 return response.data, 这样可以让后面的代码精简一些
-    if (response.data.status.errCode === 200) {
+    if (response.data.status.errCode === 1) {
       return {
         code: response.data.status.errCode,
         data: response.data.data
@@ -54,12 +57,12 @@ function checkStatus(response) {
 
 // 处理来自后端的错误
 function checkCode(res, type) {
-  if (type !== "noProcessing") {
+  if (type !== 'noProcssing') {
     // 需要处理
     if (res.code !== 1) {
       // 默认 toast 显示错误信息
       const err = `${res.data}. `;
-      if (type === "MessageBox") {
+      if (type === 'MessageBox') {
         MessageBox.alert(err);
       } else {
         Toast(err);
@@ -80,7 +83,7 @@ function checkCode(res, type) {
 export default {
   post(url, data, errType) {
     return axios({
-      method: "post",
+      method: 'post',
       url: publicPath + url,
       data: qs.stringify(data)
     }).then(checkStatus).then(res => {
@@ -89,7 +92,7 @@ export default {
   },
   get(url, params, errType) {
     return axios({
-      method: "get",
+      method: 'get',
       url: publicPath + url,
       params
     }).then(checkStatus).then(res => {
@@ -98,7 +101,7 @@ export default {
   },
   spePost(url, params) {
     return axios({
-      method: "post",
+      method: 'post',
       url: publicPath + url,
       data: qs.stringify(params)
     }).then(res => {

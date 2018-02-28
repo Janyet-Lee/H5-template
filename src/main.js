@@ -5,7 +5,7 @@ import App from './App';
 import VueRouter from 'vue-router';
 import router from './router';
 import store from './store';
-import request from '../utils/request';
+import request from '@/utils/request';
 import 'lib-flexible';
 
 Vue.prototype.$request = request;

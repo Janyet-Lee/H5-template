@@ -124,11 +124,11 @@
 </template>
 
 <script>
-import tool from '../../utils/tools';
-import homeApi from '../api/home.js';
+import tool from '@/utils/tools';
+import homeApi from '@/api/home.js';
 import { Toast } from 'mint-ui';
 import canvasModel from '../assets/home/canvas-model.png';
-require('../../utils/bridge');
+require('@/utils/bridge');
 
 export default {
   name: 'HelloWorld',
