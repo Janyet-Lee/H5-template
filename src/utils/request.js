@@ -10,7 +10,7 @@ import {
 import config2 from '../../private.config';
 
 // API 服务器地址
-const publicPath = config2.apiPath;
+const apiPath = config2.apiPath;
 
 // axios 默认配置
 axios.defaults.timeout = 60000;
@@ -37,15 +37,16 @@ function checkStatus(response) {
   // 如果 http 状态码正常, 则直接返回数据
   if (response.status === 200 || response.status === 304) {
     // 这里, 如果不需要除 data 外的其他数据, 可以直接 return response.data, 这样可以让后面的代码精简一些
-    if (response.data.status.errCode === 1) {
+    if (response.data.status === 1) {
       return {
-        code: response.data.status.errCode,
-        data: response.data.data
+        code: response.data.status,
+        data: response.data.data,
+        addCode: response.data.code
       };
     }
     return {
-      code: response.data.status.errCode,
-      data: response.data.status.message
+      code: response.data.status,
+      data: response.data.message
     };
   }
   // 异常状态下, 把错误信息返回去
@@ -84,7 +85,7 @@ export default {
   post(url, data, errType) {
     return axios({
       method: 'post',
-      url: publicPath + url,
+      url: apiPath + url,
       data: qs.stringify(data)
     }).then(checkStatus).then(res => {
       return checkCode(res, errType);
@@ -93,7 +94,7 @@ export default {
   get(url, params, errType) {
     return axios({
       method: 'get',
-      url: publicPath + url,
+      url: apiPath + url,
       params
     }).then(checkStatus).then(res => {
       return checkCode(res, errType);
@@ -102,7 +103,7 @@ export default {
   spePost(url, params) {
     return axios({
       method: 'post',
-      url: publicPath + url,
+      url: apiPath + url,
       data: qs.stringify(params)
     }).then(res => {
       NProgress.done();

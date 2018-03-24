@@ -1,19 +1,9 @@
 import Vuex from 'vuex';
+import loginModule from './modules/login';
 
 const basic = new Vuex.Store({
-  state: {
-    money: ''
-  },
-  getters: {
-
-  },
-  acitons: {
-
-  },
-  mutations: {
-    increment(state, payload) {
-      state.money = payload;
-    }
+  modules: {
+    loginModule
   }
 });
 

@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <transition :name="'slide-reverse'" mode="out-in">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -36,6 +38,7 @@ html,
   * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
   li {
     list-style: none;
@@ -96,5 +99,47 @@ html,
   -moz-osx-font-smoothing: grayscale;
   // text-align: center;
   height: 100%;
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: all .5s;
+}
+.slide-enter, .slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(-100%);
+  // transform: rotateY(90deg);
+}
+
+.slide-reverse-enter-active, .slide-reverse-leave-active {
+  transition: all .5s ease-in-out;
+}
+.slide-reverse-enter, .slide-reverse-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: rotateY(90deg);
+}
+
+.slide-Y-enter-active, .slide-Y-leave-active {
+  transition: all .5s;
+}
+.slide-Y-enter, .slide-Y-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(60%) scale(0);
+}
+
+
+.fade-rotate-Y-enter-active, .fade-rotate-Y-leave-active {
+  transition: all .5s;
+}
+.fade-rotate-Y-enter, .fade-rotate-Y-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: rotateY(90deg);
+}
+
+.fade-rotate-X-enter-active, .fade-rotate-X-leave-active {
+  transition: all .5s;
+}
+.fade-rotate-X-enter, .fade-rotate-X-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: rotateX(90deg);
 }
 </style>
