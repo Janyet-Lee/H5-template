@@ -65,9 +65,9 @@ export default {
   mounted() {
     let that = this;
     window.onresize = function() {
-      var height = document.getElementsByClassName('m-regist')[0].clientHeight
-      that.showTips = +height < 400 ? false : true;
-    }
+      var height = document.getElementsByClassName('m-regist')[0].clientHeight;
+      that.showTips = !(+height < 400);
+    };
   },
   destroyed() {
     window.onresize = null;
@@ -82,7 +82,7 @@ export default {
       }
     },
     async registByPass() {
-      this.$router.push('/regist/setPassword')
+      this.$router.push('/regist/setPassword');
       // let check =
       //   (await this.validateFun(
       //     this.passwordregistObj.phone,
@@ -140,24 +140,24 @@ export default {
         });
         if (code === 1) {
           switch (+addCode) {
-            case 1:
-              window.location.href = '/';
-              break;
-            case 3: // 需要密码登录
-              this.$store.dispatch('setPhone', {
-                phone: this.validateregistObj.phone
-              });
-              this.$router.push('/enterPassword');
-              break;
+          case 1:
+            window.location.href = '/';
+            break;
+          case 3: // 需要密码登录
+            this.$store.dispatch('setPhone', {
+              phone: this.validateregistObj.phone
+            });
+            this.$router.push('/enterPassword');
+            break;
 
-            case 4: // 需要设置密码登录
-              this.$store.dispatch('setPhone', {
-                phone: this.validateregistObj.phone
-              });
-              this.$router.push('/setPassword');
-              break;
-            default:
-              break;
+          case 4: // 需要设置密码登录
+            this.$store.dispatch('setPhone', {
+              phone: this.validateregistObj.phone
+            });
+            this.$router.push('/setPassword');
+            break;
+          default:
+            break;
           }
         }
         Indicator.close();
@@ -170,15 +170,15 @@ export default {
       this.sendingCode = true;
       let check = this.usePassword
         ? await this.validateFun(
-            this.passwordregistObj.phone,
-            this.$tool.regexp.phone,
-            '请输入正确手机号'
-          )
+          this.passwordregistObj.phone,
+          this.$tool.regexp.phone,
+          '请输入正确手机号'
+        )
         : await this.validateFun(
-            this.validateregistObj.phone,
-            this.$tool.regexp.phone,
-            '请输入正确手机号'
-          );
+          this.validateregistObj.phone,
+          this.$tool.regexp.phone,
+          '请输入正确手机号'
+        );
       if (!check) {
         return false;
       }
@@ -309,7 +309,7 @@ export default {
     width: 308px;
     position: relative;
     height: 54px;
-    transition: .5s ease;
+    transition: 0.5s ease;
 
     &.with-code {
       height: 108px;

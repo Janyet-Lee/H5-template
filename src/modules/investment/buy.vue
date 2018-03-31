@@ -1,5 +1,5 @@
 <template>
-  <div class="m-depository">
+  <div class="m-investment">
     <div class="first-page">
       <div class="top-container">
         <div class="product-name">年无忧360天</div>
@@ -17,10 +17,10 @@
           <div class="current-persent">剩余金额2000000元，已募资80%</div>
           <div class="bar-container">
             <div class="bar-wrapper">
-               <div class="transparent"></div>
-                <img :style="{'left': '40%'}" class="rocket" src="../../assets/despository/rocket.png" alt="">
-                <div :style="{'width': '42%'}" class="white">
-            </div>
+              <div class="transparent"></div>
+              <img :style="{'left': '40%'}" class="rocket" src="../../assets/despository/rocket.png" alt="">
+              <div :style="{'width': '42%'}" class="white">
+              </div>
             </div>
           </div>
           <div class="product-detail">
@@ -63,21 +63,18 @@
 </template>
 
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
 <style lang="less">
-.m-depository {
+.m-investment {
   width: 100%;
   height: 100%;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   .first-page {
-
     .top-container {
       position: relative;
-      background-color: #FE5812;
+      background-color: #fe5812;
       height: 255px;
       overflow: hidden;
       // padding: 0px 22px;
@@ -162,7 +159,7 @@ export default {
             margin: auto;
             z-index: 4;
             transition: 1s all ease;
-          } 
+          }
 
           .transparent {
             height: 5px;
@@ -174,7 +171,7 @@ export default {
             margin: auto;
             // margin-top: 1px;
             z-index: 2;
-            background-color: rgba(255, 255, 255, .2)
+            background-color: rgba(255, 255, 255, 0.2);
           }
 
           .white {
@@ -200,7 +197,7 @@ export default {
             width: 33.3%;
             div {
               text-align: center;
-              color: #F2F2F2;
+              color: #f2f2f2;
               &:last-child {
                 font-weight: bold;
                 margin-top: 3px;
@@ -215,7 +212,7 @@ export default {
       font-family: PingFangSC-Regular;
       text-align: center;
       font-size: 12px;
-      color: #F2F2F2;
+      color: #f2f2f2;
       margin-top: 5px;
     }
 
@@ -229,20 +226,19 @@ export default {
         text-align: center;
         img {
           display: inline-block;
-          vertical-align: middle;          
+          vertical-align: middle;
           width: 18px;
           height: auto;
           margin-right: 10px;
         }
         span {
           display: inline-block;
-          vertical-align: middle;        
+          vertical-align: middle;
           font-size: 12px;
-          color: #666666;  
+          color: #666666;
         }
       }
     }
-
 
     .steps-container {
       margin-top: 5px;
