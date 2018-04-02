@@ -4,7 +4,7 @@
       <div class="slogan">
         <span>对接上饶银行资金存管</span>
         <span>|</span>
-        <span>让您的投资更放心</span>
+        <span>让您的投资更安全</span>
       </div>
       <img src="../../assets/guide/bank.png" alt="">
     </div>

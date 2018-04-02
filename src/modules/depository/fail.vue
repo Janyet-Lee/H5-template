@@ -26,6 +26,8 @@ export default {};
     margin-top: 50px;
 
     a.phone {
+      border: none;
+      outline: none;
       display: block;
       width: 50%;
       margin: auto;

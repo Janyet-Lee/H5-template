@@ -1,8 +1,8 @@
 <template>
-  <div class="m-investment-fail-container">
+  <div class="m-withdraw-fail-container">
     <div class="top">
-      <img src="../../assets/despository/fail.png" alt="">
-      <div>投资失败，请稍后再试或联系客服</div>
+      <img src="../../../assets/despository/fail.png" alt="">
+      <div>提现失败，请稍后再试或联系客服</div>
       <a href="tel:4000855560" class="phone">4000-8555-60</a>
     </div>
     <div class="link-container">
@@ -16,7 +16,7 @@ export default {};
 </script>
 
 <style lang="less">
-.m-investment-fail-container {
+.m-withdraw-fail-container {
   width: 100%;
   height: 100%;
   background-color: white;

@@ -1,8 +1,8 @@
 <template>
-  <div class="m-investment-fail-container">
+  <div class="m-personal-password-fail-container">
     <div class="top">
-      <img src="../../assets/despository/fail.png" alt="">
-      <div>投资失败，请稍后再试或联系客服</div>
+      <img src="../../../assets/despository/fail.png" alt="">
+      <div>修改失败，请稍后再试或联系客服</div>
       <a href="tel:4000855560" class="phone">4000-8555-60</a>
     </div>
     <div class="link-container">
@@ -16,7 +16,7 @@ export default {};
 </script>
 
 <style lang="less">
-.m-investment-fail-container {
+.m-personal-password-fail-container {
   width: 100%;
   height: 100%;
   background-color: white;

@@ -33,8 +33,6 @@ export default {};
   padding: 35px 37.5px;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  overflow: scroll;
 
   .words {
     margin-bottom: 25px;

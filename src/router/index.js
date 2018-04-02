@@ -31,6 +31,14 @@ import investmentFail from '@/modules/investment/fail';
 import rechargeSuccess from '@/modules/investment/recharge/success';
 import rechargeFail from '@/modules/investment/recharge/fail';
 
+// 提现模块
+import withdrawSuccess from '@/modules/investment/withdraw/success';
+import withdrawFail from '@/modules/investment/withdraw/fail';
+
+// 个人中心修改密码
+import passwordSuccess from '@/modules/personal/password/success';
+import passwordFail from '@/modules/personal/password/fail';
+
 Vue.use(Router);
 
 export default new Router({
@@ -70,44 +78,49 @@ export default new Router({
     //   name: 'registSetPassword',
     //   component: registSetPassword
     // },
-    // 存管相关模块
+    // 存管账户开通成功
     {
       path: '/depository/success',
       name: 'depository-success',
       component: depositorySuccess
     },
+    // 存管账户开通失败
     {
       path: '/depository/fail',
       name: 'depository-fail',
       component: depositoryFail
     },
-    // 村官指南模块
+    // 存管指南入口
     {
       path: '/guide/depository-guide',
       name: 'depository-guide',
       component: depositoryGuide
     },
+    // 开户指南
     {
       path: '/guide/account-guide',
       name: 'account-guide',
       component: accountGuide
     },
+    // 充值指南
     {
       path: '/guide/recharge-guide',
       name: 'recharge-guide',
       component: rechargeGuide
     },
+    // 投资指南
     {
       path: '/guide/investment-guide',
       name: 'investment-guide',
       component: investmentGuide
     },
+    // 提现指南
     {
       path: '/guide/withdraw-guide',
       name: 'withdraw-guide',
       component: withdrawGuide
     },
-    // 投资模块
+    // 债权转让清单
     {
       path: '/investment/transfer-list',
       name: 'transfer-list',
@@ -118,25 +131,55 @@ export default new Router({
       name: 'invest-page',
       component: invest
     },
+    // 投资成功
     {
       path: '/investment/success',
       name: 'investment-success',
       component: investmentSuccess
     },
+    // 投资失败
     {
       path: '/investment/fail',
       name: 'investment-fail',
       component: investmentFail
     },
+    // 充值成功
     {
       path: '/investment/recharge/success',
       name: 'recharge-success',
       component: rechargeSuccess
     },
+    // 充值失败
     {
       path: '/investment/recharge/fail',
       name: 'recharge-fail',
       component: rechargeFail
+    },
+    // 提现成功
+    {
+      path: '/investment/withdraw/success',
+      name: 'withdraw-success',
+      component: withdrawSuccess
+    },
+    // 提现失败
+    {
+      path: '/investment/withdraw/fail',
+      name: 'withdraw-fail',
+      component: withdrawFail
+    },
+
+    // 个人中心修改密码
+    // 修改成功
+    {
+      path: '/personal/changePass/success',
+      name: 'changePass-success',
+      component: passwordSuccess
+    },
+    // 修改失败
+    {
+      path: '/personal/changePass/fail',
+      name: 'changePass-fail',
+      component: passwordFail
     },
     {
       path: '/*',

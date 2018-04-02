@@ -98,6 +98,8 @@ html,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // text-align: center;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   height: 100%;
 }
 
