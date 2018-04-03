@@ -155,11 +155,8 @@ export default {
     changePageEnd(e) {
       if (this.touchEndY === 0) {
         this.touchEndY = this.touchStartY;
-        console.log('===')
       }
       this.distance = this.touchEndY - this.touchStartY;
-      console.log(this.distance, 'distance');
-      console.log(this.touchEndY, this.touchStartY);
       let secondPageScroll = (document.getElementsByClassName(
         'out-wrapper'
       )[0].scrollTop = 0);
@@ -176,7 +173,7 @@ export default {
       let secScrollTop1 = document.getElementsByClassName(
         'introduction-container'
       )[0].scrollTop;
-      if (this.currentTab === 3 && secScrollTop3 !== 0 || this.currentTab === 1 && secScrollTop1 !== 0) {
+      if ((this.currentTab === 3 && secScrollTop3 !== 0) || (this.currentTab === 1 && secScrollTop1 !== 0)) {
         this.clearAll();
         return false;
       }
@@ -216,13 +213,11 @@ export default {
     position: absolute;
     transition: all 0.6s ease;
     top: 0px;
-    // transform: translateY(-100%);
     .top-container {
       position: relative;
       background-color: #fe5812;
       height: 255px;
       overflow: hidden;
-      // padding: 0px 22px;
       box-sizing: border-box;
       background-size: cover;
       background-position: 50% 50%;
@@ -460,7 +455,6 @@ export default {
     width: 100%;
     height: 100%;
     transition: all 0.6s ease;
-    // transform: translateY(-100%);
     background-color: white;
 
     .tabs-container {
